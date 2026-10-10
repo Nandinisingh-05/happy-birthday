@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Khushboo 💗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="floating-decor decor-one">♡</div>
+    <div class="floating-decor decor-two">✿</div>
+    <div class="floating-decor decor-three">🎀</div>
+
+    <header class="topbar">
+        <span>♡ Made with love, for Khushboo</span>
+        <button id="musicButton" class="music-button" type="button">
+            ♫ Play birthday music
+        </button>
+    </header>
+
+    <main class="page">
+
+        <!-- PASSWORD SCREEN -->
+        <section class="card password-screen" id="passwordScreen">
+            <div class="bow">🎀</div>
+            <p class="eyebrow">TOP SECRET · JUST FOR YOU</p>
+            <h1>A little secret,<br>Khushboo ♡</h1>
+            <p class="intro">
+                Someone has made something special for you.
+                But first, prove you're the birthday girl! 💌
+            </p>
+
+            <form id="passwordForm">
+                <input id="passwordInput" type="password"
+                    placeholder="Enter your secret password"
+                    aria-label="Secret password" required>
+                <button class="pink-button" type="submit">
+                    Unlock my surprise ♡
+                </button>
+            </form>
+
+            <p id="errorMessage" class="error" aria-live="polite"></p>
+            <p class="handwriting">hint: something only we know 🎀</p>
+        </section>
+
+        <!-- BIRTHDAY WELCOME -->
+        <section class="card welcome-screen hidden" id="birthdayScreen">
+            <div class="bow">💗</div>
+            <p class="eyebrow">YOU UNLOCKED IT!</p>
+            <h1>Happy Birthday,<br>Khushboo! 🎂</h1>
+            <p class="intro">
+                Welcome to your little universe. This tiny corner of
+                the internet was made with so much love, just for you. ♡
+            </p>
+            <div class="countdown-box">
+                <p class="eyebrow">YOUR SPECIAL DAY</p>
+                <p id="countdown">Counting down to your birthday…</p>
+            </div>
+            <button class="pink-button" id="continueButton" type="button">
+                Enter my little world 🌷
+            </button>
+            <p class="handwriting">you are loved more than you know</p>
+        </section>
+
+        <!-- SCRAPBOOK -->
+        <section class="scrapbook hidden" id="scrapbookScreen">
+            <div class="paper-heading">
+                <p class="eyebrow">A LITTLE CORNER OF THE WORLD</p>
+                <h1>Our Little Scrapbook ♡</h1>
+                <p class="intro">
+                    A few little things to remind you how special you are.
+                </p>
+            </div>
+
+            <div class="memory-grid">
+                <article class="memory-card pink-card tilt-left">
+                    <span class="sticker">🎀</span>
+                    <img class="memory-photo"
+                      src="images/photo1.jpg"
+                      alt="A favourite memory with Khushboo">
+                    <h2>Since 2014, Always Us 💌</h2>
+                    <p>Some people make ordinary days feel magical.
+                       You're one of those people.Growing up, but never growing apart. May our bond always stay this pure. ♡🎀 ♡</p>
+                </article>
+
+                <article class="memory-card lilac-card tilt-right">
+                    <span class="sticker">🌷</span>
+                    <img class="memory-photo"
+                     src="images/photo2.jpg"
+                      alt="A lovely moment together">
+                    <h2>Little reminder</h2>
+                    <p>Since 2014, and still my person. ♡
+
+We've grown, we've changed, and life has taken us through so many chapters, but I hope we always keep the same pure bond we had back then. No matter how much time passes or how much life changes, may we always find our way back to the same old us. 🎀</p>
+                </article>
+
+                <article class="memory-card cream-card tilt-right">
+                    <span class="sticker">💌</span>
+                   <img class="memory-photo"
+                     src="images/photo3.jpg"
+                     alt="A special memory">
+                    <h2>A tiny promise</h2>
+                    <p>No matter how busy life gets, I'll always be
+                       cheering for you.Life may change, but I hope we never do. 🥹</p>
+                </article>
+
+                <article class="memory-card pink-card tilt-left">
+                    <span class="sticker">✨</span>
+                    <img class="memory-photo"
+                     src="images/photo.jpg"
+                    alt="A memory to treasure">
+                    <h2>Your new chapter</h2>
+                    <p>May this year bring happy surprises, big dreams,
+                       and countless reasons to smile.</p>
+                </article>
+            </div>
+
+            <!-- SECRET MESSAGES -->
+            <section class="inner-section">
+                <p class="eyebrow">PSST… A LITTLE SECRET</p>
+                <h2>Little secrets for you ♡</h2>
+                <p>Tap each heart to discover a tiny message 💌</p>
+
+                <div class="secret-grid">
+                    <button class="secret-card" data-message="You make life brighter just by being you. Never forget that. 💗" type="button">
+                        💌 <span>Open me</span>
+                    </button>
+                    <button class="secret-card" data-message="Even on your hardest days, you deserve all the love and gentleness in the world. 🌷" type="button">
+                        🎀 <span>Open me</span>
+                    </button>
+                    <button class="secret-card" data-message="If I could gift you one thing, it would be the ability to see yourself through my eyes. ✨" type="button">
+                        💖 <span>Open me</span>
+                    </button>
+                </div>
+
+                <p id="secretMessage" class="secret-message" aria-live="polite">
+                    ♡ Your secret message will appear here ♡
+                </p>
+            </section>
+
+            <!-- BIRTHDAY LETTER -->
+            <section class="inner-section letter-section">
+                <div class="letter-icon">💌</div>
+                <p class="eyebrow">SOMETHING FROM MY HEART</p>
+                <h2>A letter just for you</h2>
+                <p>A few words from my heart to yours.</p>
+
+                <button class="pink-button" id="openLetterButton" type="button">
+                    Open your birthday letter ♡
+                </button>
+
+                <article id="letterPaper" class="letter-paper hidden">
+                    <p class="letter-greeting">My dearest Khushboo,</p>
+                    <p id="typedLetter" class="typed-letter"></p>
+                    <p class="letter-signature">With all my love, ♡</p>
+                </article>
+            </section>
+
+            <!-- FINAL GIFT -->
+            <section class="inner-section gift-section">
+                <p class="eyebrow">ONE LAST LITTLE SURPRISE</p>
+                <h2>Your special gift 🎁</h2>
+                <p>There's something waiting for you. Click the present!</p>
+
+                <button id="giftButton" class="gift-button" type="button"
+                    aria-label="Open your birthday gift">
+                    <span class="gift-emoji" id="giftEmoji">🎁</span>
+                    <span class="gift-caption">Click me! ♡</span>
+                </button>
+
+                <div id="giftReveal" class="gift-reveal hidden">
+                    <h2>Surprise, bestie! 💗</h2>
+                    <p>
+                        Your gift is a promise of more laughter, long
+                        conversations, silly memories, and adventures
+                        together. One birthday can't hold all the love
+                        I have for you.
+                    </p>
+                    <p class="handwriting">The best is yet to come ♡</p>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <span>♡</span>
+                <p>Happy Birthday, Khushboo!</p>
+                <span>♡</span>
+                <p class="handwriting">made with love, just for you</p>
+            </footer>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    <audio id="birthdayMusic" loop>
+    <source src="music/happy-birthday.mp3" type="audio/mpeg">
+</audio>
+<button id="musicButton">🎵 Play our song</button>
+</body>
+</html>
