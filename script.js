@@ -205,22 +205,21 @@ function createHearts() {
 
 
 // 7. GENTLE SYNTHESIZED BACKGROUND MUSIC
-// No music file or download is required.
-// Browsers require a user click before sound can play.
 const musicButton = document.getElementById("musicButton");
 const birthdayMusic = document.getElementById("birthdayMusic");
 
-musicButton.addEventListener("click", async function () {
-    try {
-        if (birthdayMusic.paused) {
-            await birthdayMusic.play();
-            musicButton.textContent = "♫ Pause Aashiyan";
-        } else {
-            birthdayMusic.pause();
-            musicButton.textContent = "♫ Play Aashiyan";
+if (musicButton && birthdayMusic) {
+    musicButton.addEventListener("click", async function () {
+        try {
+            if (birthdayMusic.paused) {
+                await birthdayMusic.play();
+                musicButton.textContent = "♫ Pause Aashiyan";
+            } else {
+                birthdayMusic.pause();
+                musicButton.textContent = "♫ Play Aashiyan";
+            }
+        } catch (error) {
+            console.error("Music playback failed:", error);
         }
-    } catch (error) {
-        musicButton.textContent = "♫ Tap to try again";
-        console.error("Music playback failed:", error);
-    }
-});
+    });
+}
