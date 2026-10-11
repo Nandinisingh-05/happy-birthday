@@ -205,21 +205,40 @@ function createHearts() {
 
 
 // 7. GENTLE SYNTHESIZED BACKGROUND MUSIC
+
 const musicButton = document.getElementById("musicButton");
 const birthdayMusic = document.getElementById("birthdayMusic");
 
 if (musicButton && birthdayMusic) {
+    let isChangingMusic = false;
+
     musicButton.addEventListener("click", async function () {
+        if (isChangingMusic) return;
+
+        isChangingMusic = true;
+        musicButton.disabled = true;
+
         try {
             if (birthdayMusic.paused) {
                 await birthdayMusic.play();
-                musicButton.textContent = "♫ Pause Aashiyan";
+                musicButton.textContent = "♫ Pause birthday music";
             } else {
                 birthdayMusic.pause();
-                musicButton.textContent = "♫ Play Aashiyan";
+                musicButton.textContent = "♫ Play birthday music";
             }
         } catch (error) {
-            console.error("Music playback failed:", error);
+            if (error.name !== "AbortError") {
+                console.error("Music playback failed:", error);
+                musicButton.textContent = "♫ Music couldn't play";
+            }
+        } finally {
+            isChangingMusic = false;
+            musicButton.disabled = false;
         }
     });
+
+    birthdayMusic.addEventListener("ended", function () {
+        musicButton.textContent = "♫ Play birthday music";
+    });
 }
+
